@@ -1,59 +1,213 @@
-# MyPortfolio
+# 🚀 Manas Ranjan Bariha - Portfolio
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.3.
+A modern, professional portfolio website built with **Angular 20**, showcasing my work as a Full Stack Developer specializing in healthcare applications.
 
-## Development server
+![Angular](https://img.shields.io/badge/Angular-20.3.3-red?style=flat-square&logo=angular)
+![TypeScript](https://img.shields.io/badge/TypeScript-Latest-blue?style=flat-square&logo=typescript)
+![Material Design](https://img.shields.io/badge/Material-20.2.10-pink?style=flat-square&logo=material-design)
+![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)
 
-To start a local development server, run:
+## ✨ Features
 
-```bash
-ng serve
+- **Responsive Design** - Works perfectly on desktop, tablet, and mobile
+- **Modern UI** - Built with Angular Material and custom SCSS
+- **Professional Sections**:
+  - Hero section with social links
+  - About page with work experience and interactive skills
+  - Project showcase with GitHub & live demo links
+  - Contact form with validation
+  - Social media integration (LinkedIn, GitHub, LeetCode)
+- **Interactive Elements**:
+  - Skill badges with modal popups
+  - Smooth animations and transitions
+  - Download resume functionality
+- **Best Practices**:
+  - Standalone components architecture
+  - Constants-based data management
+  - Server-side rendering (SSR) support
+  - Accessibility optimized (WCAG compliant)
+
+## 🛠️ Tech Stack
+
+### Frontend
+- **Framework**: Angular 20 (Latest)
+- **Language**: TypeScript
+- **Styling**: SCSS with Material Design
+- **UI Library**: Angular Material 20.2.10
+- **Build Tool**: Angular CLI 20.3.3
+
+### Backend (Optional)
+- Node.js/Express
+- Spring Boot
+- RESTful APIs
+
+### Tools & Platforms
+- Git & GitHub for version control
+- Jira for project management
+- Jenkins & GitLab for CI/CD
+- Docker for containerization
+
+## 📋 Project Structure
+
+```
+src/
+├── app/
+│   ├── about/              # About section with experience & skills
+│   ├── home/               # Hero section
+│   ├── projects/           # Project showcase
+│   ├── contacts/           # Contact form
+│   ├── footer/             # Footer with social links
+│   ├── navbar/             # Navigation bar
+│   ├── constants/          # Data constants
+│   │   ├── about.constants.ts
+│   │   ├── home.constants.ts
+│   │   ├── projects.constants.ts
+│   │   ├── contacts.constants.ts
+│   │   ├── footer.constants.ts
+│   │   └── navbar.constants.ts
+│   ├── app.ts              # Root component
+│   ├── app.routes.ts       # Route configuration
+│   └── app.scss            # Global styles
+├── assets/                 # Static assets
+├── public/                 # Public files
+│   └── ManasRanjanBariha-resume.pdf
+└── index.html              # Main HTML file
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## 🚀 Getting Started
 
-## Code scaffolding
+### Prerequisites
+- Node.js (v18 or higher)
+- npm or yarn
+- Angular CLI 20.3.3
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+### Installation
 
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/ManasRanjanBariha/portfolio.git
+   cd portfolio
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+3. **Start development server**
+   ```bash
+   ng serve
+   ```
+   Navigate to `http://localhost:4200/`
+
+## 📦 Available Scripts
+
+### Development
 ```bash
-ng generate component component-name
+ng serve                    # Start dev server
+ng serve --open             # Start and open in browser
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
+### Production Build
 ```bash
-ng generate --help
+ng build --configuration production
 ```
 
-## Building
-
-To build the project run:
-
+### Server-Side Rendering
 ```bash
-ng build
+ng build --configuration production --prerender
+npm run serve:ssr           # Run SSR server
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
+### Testing
 ```bash
-ng test
+ng test                     # Run unit tests
+ng e2e                      # Run e2e tests
 ```
 
-## Running end-to-end tests
+## 🎨 Customization
 
-For end-to-end (e2e) testing, run:
+### Update Personal Information
+Edit constants in `src/app/constants/`:
+- `home.constants.ts` - Hero section & social links
+- `about.constants.ts` - Work experience & skills
+- `projects.constants.ts` - Project details
+- `contacts.constants.ts` - Contact form fields
+- `footer.constants.ts` - Footer information
 
-```bash
-ng e2e
+### Add New Projects
+Update `projects.constants.ts`:
+```typescript
+export const PROJECTS: Project[] = [
+  {
+    id: 1,
+    title: "Your Project",
+    description: "Project description",
+    image: "image-url",
+    technologies: ["Angular", "TypeScript"],
+    liveUrl: "https://live-demo.com",
+    githubUrl: "https://github.com/yourrepo"
+  }
+];
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+### Update Resume
+Replace `public/ManasRanjanBariha-resume.pdf` with your resume PDF
 
-## Additional Resources
+## 🔗 Social Links
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- **LinkedIn**: https://www.linkedin.com/in/manas-ranjan-bariha-a1901b387
+- **GitHub**: https://github.com/ManasRanjanBariha
+- **LeetCode**: https://leetcode.com/manasranjanbariha11/
+
+## 📧 Contact
+
+For inquiries or opportunities, use the contact form on the website or reach out at:
+- Email: manasranjanbariha11@gmail.com
+
+## 🌐 Deployment
+
+### Deploy to Netlify
+```bash
+# Build the project
+ng build --configuration production --prerender
+
+# Drag and drop 'dist/my-portfolio' folder to Netlify
+```
+
+### Deploy to Vercel
+```bash
+npm i -g vercel
+vercel
+```
+
+### Deploy to GitHub Pages
+```bash
+ng build --configuration production --base-href=/portfolio/
+```
+
+## 📊 Performance
+
+- ⚡ **Fast Load Time** - Optimized bundle size
+- 🎯 **SEO Friendly** - Server-side rendering
+- ♿ **Accessible** - WCAG 2.1 compliant
+- 📱 **Mobile Optimized** - Responsive design
+- 🔒 **Secure** - No sensitive data exposure
+
+## 📝 License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## 🤝 Contributing
+
+Contributions are welcome! Feel free to fork the repository and submit pull requests.
+
+## 📚 Resources
+
+- [Angular Documentation](https://angular.dev)
+- [Angular Material](https://material.angular.io)
+- [TypeScript Handbook](https://www.typescriptlang.org/docs/)
+
+---
+
+**Created with ❤️ by Manas Ranjan Bariha**
