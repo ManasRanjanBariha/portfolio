@@ -1,0 +1,38 @@
+<footer class="footer">
+  <div class="footer-container">
+    <!-- Main Footer Content -->
+    <div class="footer-main">
+      <!-- Left Section: About Me -->
+      <div class="footer-info">
+        <h3 class="footer-name">{{ footerText.name }}</h3>
+        <p class="footer-description">
+          {{ footerText.description }}
+        </p>
+      </div>
+      
+      <!-- Right Section: Social Links -->
+      <div class="footer-social">
+        <h4 class="social-title">{{ footerText.socialTitle }}</h4>
+        <div class="social-links">
+          <button 
+            class="social-btn"
+            *ngFor="let social of socialLinks"
+            (click)="openSocialLink(social.url)"
+            [attr.aria-label]="social.name"
+            [style.--social-color]="social.color"
+          >
+            <img [src]="social.logoUrl" [alt]="social.name" class="social-logo" />
+          </button>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Divider Line -->
+    <div class="footer-divider"></div>
+    
+    <!-- Copyright Section -->
+    <div class="footer-copyright">
+      <p>{{ footerText.copyright }} <span class="highlight">{{ footerText.name }}</span></p>
+    </div>
+  </div>
+</footer>

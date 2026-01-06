@@ -1,0 +1,43 @@
+<mat-sidenav-container class="sidenav-container">
+  <!-- Mobile Sidenav -->
+  <mat-sidenav #drawer class="mobile-sidenav" mode="over" position="start">
+    <div class="sidenav-header">
+      <h3>{{ sidenavHeader }}</h3>
+      <button mat-icon-button (click)="drawer.close()">
+        <mat-icon>{{ closeIcon }}</mat-icon>
+      </button>
+    </div>
+    <mat-nav-list>
+      <a mat-list-item *ngFor="let item of navItems" [href]="item.href" (click)="drawer.close()">
+        <mat-icon matListItemIcon>{{ item.icon }}</mat-icon>
+        <span matListItemTitle>{{ item.label }}</span>
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <!-- Navbar -->
+    <mat-toolbar color="primary" class="navbar">
+      <!-- Left Side: Logo + Brand -->
+      <div class="left-section">
+        <div class="logo-placeholder">
+          <img src="logo.png" alt="Logo" class="logo" />
+        </div>
+        <span class="brand">{{ brandName }}</span>
+      </div>
+
+      <!-- Spacer -->
+      <span class="spacer"></span>
+
+      <!-- Right Side: Desktop Nav Links -->
+      <div class="nav-links">
+        <a mat-button *ngFor="let item of navItems" [href]="item.href">{{ item.label }}</a>
+      </div>
+
+      <!-- Hamburger for mobile -->
+      <button mat-icon-button class="menu-btn" (click)="drawer.toggle()">
+        <mat-icon>{{ menuIcon }}</mat-icon>
+      </button>
+    </mat-toolbar>
+  </mat-sidenav-content>
+</mat-sidenav-container>

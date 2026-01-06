@@ -1,0 +1,38 @@
+<section class="hero-section">
+  <div class="hero-container">
+    <div class="hero-content">
+      <h1 class="hero-title">
+        Hey, I'm <span class="highlight">{{ title.split('Manas Ranjan Bariha')[1] ? 'Manas Ranjan Bariha' : 'Manas Ranjan Bariha' }}</span>
+      </h1>
+      <p class="hero-subtitle">
+        {{ subtitle }}
+      </p>
+      <div class="hero-actions">
+        <button mat-raised-button color="primary" class="project-btn" (click)="scrollToProjects()">
+          <mat-icon>work</mat-icon>
+          {{ ctaButton }}
+        </button>
+        <button mat-outlined-button class="resume-btn" (click)="downloadResume()">
+          <mat-icon>download</mat-icon>
+          {{ downloadResumeButton }}
+        </button>
+      </div>
+      
+      <!-- Social Links -->
+      <div class="social-links-container">
+        <p class="social-text">Connect with me:</p>
+        <div class="social-buttons">
+          <button 
+            class="social-btn"
+            *ngFor="let link of socialLinks"
+            (click)="openSocialLink(link.url)"
+            [attr.aria-label]="link.name"
+            [style.--social-color]="link.color"
+          >
+            <img [src]="link.logoUrl" [alt]="link.name" class="social-logo" />
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

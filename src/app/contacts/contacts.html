@@ -1,0 +1,98 @@
+<section class="contact-section">
+  <div class="contact-container">
+    <!-- Main Heading -->
+    <h1 class="contact-title">{{ contactTitle }}</h1>
+    
+    <!-- Sub Heading -->
+    <p class="contact-subtitle">
+      {{ contactSubtitle }}
+    </p>
+    
+    <!-- Contact Form -->
+    <div class="contact-form-container">
+      <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="contact-form">
+        
+        <!-- Row 1: Name and Email -->
+        <div class="form-row">
+          <!-- Name Field -->
+          <mat-form-field class="form-field" appearance="outline">
+            <mat-label>{{ formFields.name.label }}</mat-label>
+            <input 
+              matInput 
+              formControlName="name" 
+              [placeholder]="formFields.name.placeholder"
+              required
+            />
+            <mat-error *ngIf="contactForm.get('name')?.invalid && contactForm.get('name')?.touched">
+              {{ getErrorMessage('name') }}
+            </mat-error>
+          </mat-form-field>
+
+          <!-- Email Field -->
+          <mat-form-field class="form-field" appearance="outline">
+            <mat-label>{{ formFields.email.label }}</mat-label>
+            <input 
+              matInput 
+              formControlName="email" 
+              [placeholder]="formFields.email.placeholder"
+              type="email"
+              required
+            />
+            <mat-error *ngIf="contactForm.get('email')?.invalid && contactForm.get('email')?.touched">
+              {{ getErrorMessage('email') }}
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <!-- Row 2: Subject and Category (if needed) -->
+        <div class="form-row">
+          <mat-form-field class="form-field" appearance="outline">
+            <mat-label>Subject</mat-label>
+            <input 
+              matInput 
+              placeholder="What is this about?"
+            />
+          </mat-form-field>
+
+          <mat-form-field class="form-field" appearance="outline">
+            <mat-label>Category</mat-label>
+            <mat-select>
+              <mat-option value="general">General Inquiry</mat-option>
+              <mat-option value="project">Project Discussion</mat-option>
+              <mat-option value="opportunity">Opportunity</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+        <!-- Message Field - Full Width -->
+        <mat-form-field class="form-field message-field" appearance="outline">
+          <mat-label>{{ formFields.message.label }}</mat-label>
+          <textarea 
+            matInput 
+            formControlName="message" 
+            [placeholder]="formFields.message.placeholder"
+            rows="6"
+            required
+          ></textarea>
+          <mat-error *ngIf="contactForm.get('message')?.invalid && contactForm.get('message')?.touched">
+            {{ getErrorMessage('message') }}
+          </mat-error>
+        </mat-form-field>
+
+        <!-- Submit Button -->
+        <div class="form-actions">
+          <button 
+            mat-raised-button 
+            color="primary" 
+            type="submit"
+            class="submit-btn"
+            [disabled]="contactForm.invalid"
+          >
+            <mat-icon>send</mat-icon>
+            {{ submitButtonText }}
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>

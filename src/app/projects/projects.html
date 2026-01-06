@@ -1,0 +1,64 @@
+<section class="projects-section">
+  <div class="projects-container">
+    <!-- Main Heading -->
+    <h1 class="projects-title">{{ projectsTitle }}</h1>
+    
+    <!-- Sub Heading -->
+    <p class="projects-subtitle">
+      {{ projectsSubtitle }}
+    </p>
+    
+    <!-- Projects Grid -->
+    <div class="projects-grid">
+      <div class="project-card" *ngFor="let project of projects">
+        <mat-card class="project-card-content">
+          <!-- Project Image -->
+          <div class="project-image-container">
+            <img 
+              mat-card-image 
+              [src]="project.image" 
+              [alt]="project.title"
+              class="project-image"
+            />
+          </div>
+          
+          <!-- Project Content -->
+          <mat-card-content class="project-content">
+            <h3 class="project-title">{{ project.title }}</h3>
+            <p class="project-description">{{ project.description }}</p>
+            
+            <!-- Technologies -->
+            <div class="technologies">
+              <span class="tech-tag" *ngFor="let tech of project.technologies">
+                {{ tech }}
+              </span>
+            </div>
+          </mat-card-content>
+          
+          <!-- Project Actions -->
+          <mat-card-actions class="project-actions">
+            <button 
+              mat-raised-button 
+              color="primary" 
+              class="project-btn"
+              (click)="openProject(project.liveUrl)"
+              *ngIf="project.liveUrl"
+            >
+              <mat-icon>launch</mat-icon>
+              {{ liveDemoBtn }}
+            </button>
+            <button 
+              mat-button 
+              class="github-btn"
+              (click)="openProject(project.githubUrl)"
+              *ngIf="project.githubUrl"
+            >
+              <mat-icon>code</mat-icon>
+              {{ viewCodeBtn }}
+            </button>
+          </mat-card-actions>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</section>

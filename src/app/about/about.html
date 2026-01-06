@@ -1,0 +1,109 @@
+<section class="about-section">
+  <div class="about-container">
+    <!-- Main Heading -->
+    <h1 class="about-title">About Me</h1>
+    
+    <!-- Sub Heading -->
+    <p class="about-subtitle">
+      Get to know more about who I am, what I do, and my experience as a Full Stack Developer
+    </p>
+
+    <!-- Professional Summary -->
+    <div class="professional-summary">
+      <h2 class="section-title">Professional Summary</h2>
+      <p class="summary-text">
+        {{ professionalSummary }}
+      </p>
+    </div>
+    
+    <!-- Experience Section -->
+    <div class="experience-section">
+      <h2 class="section-title">Professional Experience</h2>
+      <div class="experience-container">
+        <div *ngFor="let exp of experiences" class="experience-card">
+          <div class="exp-header">
+            <div class="exp-title-group">
+              <h3 class="exp-title">{{ exp.title }}</h3>
+              <p class="exp-company">{{ exp.company }}</p>
+            </div>
+            <p class="exp-duration">{{ exp.duration }}</p>
+          </div>
+          <ul class="achievements-list">
+            <li *ngFor="let achievement of exp.achievements">
+              <mat-icon class="achievement-icon">check_circle</mat-icon>
+              <span>{{ achievement }}</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Two Column Layout -->
+    <div class="about-content">
+      <!-- Left Section: Get to Know Me -->
+      <div class="about-info">
+        <h2 class="section-title">Get to know me!</h2>
+        <div class="info-text">
+          <p>
+            I'm a <strong>Full Stack Developer</strong> passionate about building digital experiences that make a difference. 
+            I love creating web applications that are not only functional but also beautiful and user-friendly.
+          </p>
+          <p>
+            I enjoy working on both the <strong>frontend</strong> and <strong>backend</strong> of applications, 
+            from designing intuitive user interfaces to architecting robust server-side solutions. 
+            I'm always eager to learn new technologies and take on challenging projects.
+          </p>
+          <p>
+            I'm open to <strong>job opportunities</strong> where I can contribute, learn and grow. 
+            If you have a good opportunity that matches my skills and experience, 
+            then don't hesitate to <strong>contact me</strong>.
+          </p>
+          <button mat-raised-button color="primary" class="contact-btn" (click)="scrollToContact()">
+            <mat-icon>email</mat-icon>
+            Contact Me
+          </button>
+        </div>
+      </div>
+      
+      <!-- Right Section: My Skills -->
+      <div class="about-skills">
+        <h2 class="section-title">My Skills</h2>
+        <div class="skills-badges">
+          <div 
+            *ngFor="let skill of skillsData | slice:0:4" 
+            class="skill-badge"
+            (click)="openSkillsModal(skill)"
+          >
+            {{ skill.category }}
+            <span class="skill-count">{{ skill.items.length }}</span>
+          </div>
+        </div>
+        <p class="skills-description">
+          Specialized in <strong>Angular 20</strong> & modern frontend development. 
+          Experienced with full stack technologies: <strong>Node.js</strong>, <strong>Express</strong>, 
+          databases, and cloud deployment on <strong>AWS</strong>.
+        </p>
+      </div>
+    </div>
+
+    <!-- Skills Modal -->
+    <div *ngIf="showModal" class="modal-overlay" (click)="closeModal()">
+      <div class="modal-content" (click)="$event.stopPropagation()">
+        <div class="modal-header">
+          <h3>{{ selectedSkillCategory?.category }} Skills</h3>
+          <button class="close-btn" (click)="closeModal()">
+            <mat-icon>close</mat-icon>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="skills-list">
+            <div *ngFor="let skill of selectedSkillCategory?.items" class="skill-badge-modal">
+              <mat-icon class="skill-icon">{{ skill.icon }}</mat-icon>
+              <span>{{ skill.name }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

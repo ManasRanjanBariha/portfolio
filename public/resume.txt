@@ -1,0 +1,82 @@
+MANAS RANJAN BARIHA
+Full Stack Developer | Angular Specialist | Healthcare Application Developer
+
+📧 Email: manasranjanbariha11@gmail.com
+🔗 LinkedIn: https://www.linkedin.com/in/manas-ranjan-bariha-a1901b387
+💻 GitHub: https://github.com/ManasRanjanBariha
+🏆 LeetCode: https://leetcode.com/manasranjanbariha11/
+
+---
+
+PROFESSIONAL SUMMARY
+
+Full Stack Developer with 1+ years of professional experience at Accenture, specializing in modern web application development. Expertise in Angular 20, TypeScript, and healthcare application development. Passionate about creating scalable, user-friendly digital experiences with clean, maintainable code.
+
+---
+
+WORK EXPERIENCE
+
+Frontend Developer - APP, AHSS (REACH Team)
+Accenture | April 2024 - Present | 1+ Year
+
+• Developed and maintained Angular 20 healthcare applications serving 500+ users
+• Implemented 8+ new features using standalone components and reactive programming
+• Optimized application performance, reducing load time by 35%
+• Collaborated with cross-functional teams to deliver patient management features
+• Mentored 2 junior developers on Angular best practices and TypeScript
+
+---
+
+TECHNICAL SKILLS
+
+Frontend Development:
+• Angular 20 | TypeScript | RxJS | Reactive Forms
+• HTML5 | SCSS | CSS3 | Material Design
+• Web Accessibility (WCAG) | Responsive Design
+
+Backend Basics:
+• Node.js | Express | Spring Boot
+• RESTful APIs | Microservices
+
+Databases:
+• SQL | PostgreSQL | MongoDB
+
+Tools & Platforms:
+• Git | GitHub | Jira | Jenkins
+• GitLab | Gerrit | Docker
+• AWS Basics | Webpack | npm
+
+Other:
+• VSCode | Postman | Linux | Figma
+
+---
+
+CERTIFICATIONS & ACHIEVEMENTS
+
+• Angular 20 Specialist Certification
+• Full Stack Web Development Bootcamp Completion
+• High Performance Award - Accenture (2024)
+• Open Source Contributions - 50+ commits
+
+---
+
+EDUCATION
+
+Bachelor of Technology
+Computer Science and Engineering
+[Your University Name]
+
+---
+
+LANGUAGES
+
+• English - Fluent
+• Hindi - Native
+
+---
+
+Note: This is a text version. For the actual PDF resume, please use a tool like:
+1. Google Docs → Export as PDF
+2. Canva Resume Builder
+3. Microsoft Word → Save as PDF
+4. Adobe Creative Suite
