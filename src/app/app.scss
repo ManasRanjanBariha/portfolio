@@ -1,11 +1,12 @@
 .app-sidenav-container {
   height: 100vh;
   position: relative;
+  //  overflow: hidden;
 }
 
 .mat-sidenav-content {
   height: 100vh;
-  overflow-y: auto;
+  overflow-y: hidden;
 }
 
 .mat-toolbar.navbar {
@@ -168,4 +169,42 @@
   .brand {
     font-size: 1.2rem;
   }
+}
+
+
+
+/* main scroll area */
+.scroll-container {
+  height: 100vh;
+  width: 100%;
+  overflow-y: auto;
+
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+
+/* fixed navbar */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* each section */
+.snap-section {
+  width: 100%;
+  min-height: calc(100vh - 64px);
+  scroll-snap-align: start;
+
+  // display: flex;
+  // align-items: center;
+  display: block;
+}
+.footer-section {
+  min-height: auto;      /* 🔑 */
+  height: auto;
+  scroll-snap-align: end; /* optional but recommended */
+}
+footer {
+  scroll-snap-align: none;
 }

@@ -23,7 +23,7 @@
     </mat-nav-list>
   </mat-sidenav>
 
-  <mat-sidenav-content>
+  <mat-sidenav-content class="scroll-container">
     <!-- Navbar -->
     <mat-toolbar color="primary" class="navbar">
       <!-- Left Side: Logo + Brand -->
@@ -52,22 +52,22 @@
     </mat-toolbar>
 
     <!-- Main Content -->
-    <section id="home">
+    <section id="home" class="snap-section">
       <app-home></app-home>
     </section>
 
-    <section id="about">
+    <section id="about" class="snap-section">
       <app-about></app-about>
     </section>
-    <section id="projects">
+    <section id="projects" class="snap-section">
       <app-projects></app-projects>
     </section>
 
-    <section id="contact">
+    <section id="contact" class="snap-section">
       <app-contacts></app-contacts>
     </section>
-    <section id="footer">
+    <footer id="footer" class="snap-section footer-section">
       <app-footer></app-footer>
-    </section>
+    </footer>
   </mat-sidenav-content>
 </mat-sidenav-container>
